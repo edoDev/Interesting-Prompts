@@ -17,7 +17,7 @@ This session uses a two-model workflow:
 - Claude Code (you): implementation, edits, commits, file ops
 - Grok CLI: code review, security analysis, best-practice checks
 
-Grok CLI path: <YOUR_GROK_PATH>  (e.g. C:\Users\you\.grok\bin\grok.exe)
+Grok CLI path: <YOUR_GROK_PATH>  (e.g. C:\Users\edodev\.grok\bin\grok.exe)
 
 Every Grok call must use this prefix:
   "Caveman mode: respond terse, fragments OK, drop filler. "
