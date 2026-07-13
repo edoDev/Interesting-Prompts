@@ -1,4 +1,4 @@
-### BETTER PROMPTS - BETTER RESULTS
+### Claude Codes to unlock capabilities
 
 #### Coding / Tech
 - `/debug` - find bugs
