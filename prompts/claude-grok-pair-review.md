@@ -1,10 +1,18 @@
 ---
 title: Claude + Grok Pair Review
-tags: [workflow, code-review, multi-agent, grok, security]
+tags: [workflow, code-review, multi-agent, grok, security, claude-code]
 source: local
 date_added: 2026-06-30
-description: Two-model dev workflow — Claude implements, Grok CLI reviews plans and audits diffs before commit.
+description: Two-model dev workflow — Claude implements, Grok CLI reviews plans and audits diffs before commit. Canonical form is now the Claude Code skill.
 ---
+
+Canonical, mid-session form is the Claude Code skill:
+`skills/grok-pair-review/`
+
+Copy that folder to `~/.claude/skills/grok-pair-review/` or the target repo's `.claude/skills/grok-pair-review/`.
+Add `.claude/grok-pair.context.md` in the target repo from `skills/grok-pair-review/references/context-template.md`.
+
+Keep this file only as a pasteable session preamble if you are not using skills.
 
 ## Dependencies
 Requires the caveman skill (Claude Code plugin) installed in this session. If it isn't available, say so explicitly and ask how to proceed — don't guess at caveman-mode behavior or silently ignore the instruction.
@@ -53,7 +61,7 @@ After each Grok call, report:
 
 ## Project context
 
-<PASTE YOUR PROJECT SUMMARY HERE>
+Prefer `.claude/grok-pair.context.md` over pasting here.
 - Stack: <framework, DB, language>
 - Roles / auth model: <describe>
 - Key constraints: <HIPAA / security / perf / etc.>

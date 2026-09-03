@@ -9,17 +9,20 @@ Interesting prompts found and created. A personal library of pasteable prompts t
 3. Fill placeholders (`[LIKE_THIS]` or `<LIKE_THIS>`).
 4. Paste into Grok, Claude, ChatGPT, or a coding agent.
 
+Claude Code skills live under `skills/` — copy a skill folder into `~/.claude/skills/` (all projects) or `.claude/skills/` (one repo).
+
 ## Structure
 
 - `prompts/` — one `.md` file per prompt, kebab-case filename (e.g. `llm-council.md`). Literal, pasteable prompt text.
 - `resources/` — reference material that isn't itself a pasteable prompt (curated tip lists, technique roundups, etc.).
+- `skills/` — Claude Code skills (`SKILL.md` + optional `references/`). Install by copying the folder. These re-trigger mid-session; `CLAUDE.md` usually does not.
 - `_TEMPLATE.md` — start here when adding a new prompt.
 - `STYLE.md` — what earns a file vs what stays a swipe-list.
-- No subfolders within `prompts/` or `resources/`. Use frontmatter `tags` for categorization.
+- No subfolders within `prompts/` or `resources/`. Skills are directories by spec.
 
 ## Frontmatter
 
-Every file (prompt or resource) starts with:
+Every prompt or resource file starts with:
 
 ```yaml
 ---
@@ -61,3 +64,9 @@ Prefer existing tags over inventing near-duplicates.
 2. Fill frontmatter. Filename = slug of the title, kebab-case, no spaces.
 3. Write the body so it is pasteable with zero edits except placeholders.
 4. One idea per file. Collections and tip lists go in `resources/`.
+
+## Adding a skill
+
+1. New folder `skills/skill-name/` with `SKILL.md`.
+2. Frontmatter `name` must match the folder name. `description` is the trigger — what it does and when, with the words you actually type.
+3. Keep the body under ~500 lines. Put project-specific facts in a file the skill re-reads (not only in `CLAUDE.md`).
