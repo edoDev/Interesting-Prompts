@@ -1,10 +1,14 @@
-# Cool CSS Snippets
+---
+title: Cool CSS Snippets
+tags: [reference]
+source: local
+date_added: 2026-08-06
+description: Pure-CSS techniques using @property, :focus-within, and scrollbar-gutter.
+---
 
 A collection of modern, pure-CSS techniques using newer features like `@property`, `:focus-within`, and `scrollbar-gutter`.
 
----
-
-## 1. Spinning Conic Gradient
+## 1. Spinning conic gradient
 
 Creates a continuously rotating conic gradient using an animated custom property.
 
@@ -27,57 +31,39 @@ Creates a continuously rotating conic gradient using an animated custom property
 }
 ```
 
-**How it works**
 - `@property` registers `--a` as an angle so it can be smoothly animated.
 - The keyframe drives the angle from `0deg` → `360deg`.
-- The conic gradient uses that animated angle as its starting point, producing a continuous spin.
+- The conic gradient uses that animated angle as its starting point.
 
-Useful for loading indicators, colorful backgrounds, or animated borders.
-
----
-
-## 2. `:focus-within` for Form Groups
+## 2. `:focus-within` for form groups
 
 Highlights an entire container when any child inside it receives focus.
 
 ```css
-/* Use :focus-within in CSS! */
 .field:focus-within {
   border-color: red;
 }
 ```
 
-**How it works**
-- `:focus-within` matches an element if **it or any of its descendants** currently has focus.
-- Perfect for form groups, cards, or custom inputs where you want the whole wrapper to respond visually.
+`:focus-within` matches an element if it or any descendant currently has focus.
 
----
-
-## 3. Stable Scrollbar Gutter
+## 3. Stable scrollbar gutter
 
 Prevents layout shift when a scrollbar appears by always reserving space for it.
 
 ```css
-/* Reserve room for the scrollbar so content doesn’t jump */
 .scroll-container {
   overflow-y: auto;
   scrollbar-gutter: stable;
 }
 
-/* Symmetric gutter on both sides for perfect centering */
 .scroll-container {
   overflow-y: auto;
   scrollbar-gutter: stable both-edges;
 }
 ```
 
-**How it works**
-- `scrollbar-gutter: stable` reserves space on the scrollbar side even when not needed.
-- `stable both-edges` reserves space on **both** left and right for perfect centering.
-
----
-
-## 4. Pure CSS Animated Counter
+## 4. Pure CSS animated counter
 
 Animates a number from 0 to a target value with no JavaScript.
 
@@ -103,9 +89,3 @@ Animates a number from 0 to a target value with no JavaScript.
   }
 }
 ```
-
-**How it works**
-- `@property` registers `--num` as an integer so it can be animated.
-- A CSS counter is bound to the animated value.
-- `::after` displays the counter.
-- Change the final number in the keyframe and adjust the duration as needed.
